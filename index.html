@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastTaxi - Быстрое такси</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-taxi"></i>
+                <span>FastTaxi</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#order">Заказать</a></li>
+                    <li><a href="#prices">Тарифы</a></li>
+                    <li><a href="#advantages">Преимущества</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="phone">
+                <i class="fas fa-phone"></i>
+                <span>8-800-555-35-35</span>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Герой-секция -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Быстрый заказ такси за 2 минуты</h1>
+                <p class="hero-subtitle">Более 1000 машин по всему городу. Экономьте время и деньги с нашим сервисом.</p>
+                <button class="btn btn-primary btn-large" id="orderNowBtn">
+                    <i class="fas fa-car"></i> Заказать такси
+                </button>
+            </div>
+            <div class="hero-image">
+                <img src="https://img.icons8.com/color/480/taxi.png" alt="Такси">
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма заказа -->
+    <section class="order-section" id="order">
+        <div class="container">
+            <h2 class="section-title">Заказ такси</h2>
+            
+            <div class="order-form-container">
+                <form id="orderForm" class="order-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="from">
+                                <i class="fas fa-map-marker-alt"></i> Откуда
+                            </label>
+                            <input type="text" id="from" placeholder="Улица, дом" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="to">
+                                <i class="fas fa-flag-checkered"></i> Куда
+                            </label>
+                            <input type="text" id="to" placeholder="Улица, дом" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">
+                                <i class="fas fa-phone"></i> Телефон
+                            </label>
+                            <input type="tel" id="phone" placeholder="+7 (999) 999-99-99" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="carType">
+                                <i class="fas fa-car"></i> Тип автомобиля
+                            </label>
+                            <select id="carType">
+                                <option value="economy">Эконом (от 150₽)</option>
+                                <option value="comfort">Комфорт (от 250₽)</option>
+                                <option value="business">Бизнес (от 400₽)</option>
+                                <option value="minivan">Минивэн (от 500₽)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="payment">
+                            <i class="fas fa-credit-card"></i> Способ оплаты
+                        </label>
+                        <div class="payment-options">
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="cash" checked>
+                                <span>Наличные</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="card">
+                                <span>Карта</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="payment" value="online">
+                                <span>Онлайн</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="price-estimate">
+                        <div class="price-label">Примерная стоимость:</div>
+                        <div class="price-value" id="estimatedPrice">250₽</div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <i class="fas fa-check"></i> Заказать такси
+                    </button>
+                </form>
+                
+                <div class="order-status" id="orderStatus">
+                    <h3>Статус заказа</h3>
+                    <div class="status-container">
+                        <div class="status-message" id="statusMessage">Заказ не оформлен</div>
+                        <div class="driver-info hidden" id="driverInfo">
+                            <div class="driver-name">Водитель: <span id="driverName"></span></div>
+                            <div class="driver-car">Автомобиль: <span id="driverCar"></span></div>
+                            <div class="driver-phone">Телефон: <span id="driverPhone"></span></div>
+                            <div class="arrival-time">Приедет через: <span id="arrivalTime"></span> мин.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Тарифы -->
+    <section class="prices-section" id="prices">
+        <div class="container">
+            <h2 class="section-title">Наши тарифы</h2>
+            <div class="prices-grid">
+                <div class="price-card">
+                    <div class="price-card-header economy">
+                        <h3>Эконом</h3>
+                        <div class="price">от 150₽</div>
+                    </div>
+                    <div class="price-card-body">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Современные автомобили</li>
+                            <li><i class="fas fa-check"></i> Кондиционер</li>
+                            <li><i class="fas fa-check"></i> Безналичная оплата</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="price-card">
+                    <div class="price-card-header comfort">
+                        <h3>Комфорт</h3>
+                        <div class="price">от 250₽</div>
+                    </div>
+                    <div class="price-card-body">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Автомобили премиум-класса</li>
+                            <li><i class="fas fa-check"></i> Вода и салфетки</li>
+                            <li><i class="fas fa-check"></i> Бесплатный Wi-Fi</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="price-card">
+                    <div class="price-card-header business">
+                        <h3>Бизнес</h3>
+                        <div class="price">от 400₽</div>
+                    </div>
+                    <div class="price-card-body">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Бизнес-класс автомобили</li>
+                            <li><i class="fas fa-check"></i> Встреча с табличкой</li>
+                            <li><i class="fas fa-check"></i> Не курящий водитель</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="advantages-section" id="advantages">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают нас</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Быстро</h3>
+                    <p>Среднее время подачи машины - 7 минут</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Безопасно</h3>
+                    <p>Все водители проходят проверку</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-ruble-sign"></i>
+                    </div>
+                    <h3>Выгодно</h3>
+                    <p>Фиксированные цены без сюрпризов</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Поддержка 24/7</h3>
+                    <p>Круглосуточная служба поддержки</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contacts-section" id="contacts">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contacts-container">
+                <div class="contact-info">
+                    <h3>Свяжитесь с нами</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>8-800-555-35-35</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@fasttaxi.ru</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>г. Казань, ул. Карла Маркса, д. 70</span>
+                    </div>
+                </div>
+                
+                <div class="stats">
+                    <h3>Наша статистика</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value">10 000+</div>
+                            <div class="stat-label">Поездок в день</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">4.9</div>
+                            <div class="stat-label">Рейтинг в AppStore</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">2 мин</div>
+                            <div class="stat-label">Среднее время заказа</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-taxi"></i>
+                    <span>FastTaxi</span>
+                </div>
+                <div class="footer-copyright">
+                    © 2026 FastTaxi. Все права защищены.
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

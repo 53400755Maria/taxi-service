@@ -1,0 +1,42 @@
+[
+  {
+    "id": "ORD-20260216143608-TA2U",
+    "created_at": "2026-02-16T14:36:08.684230",
+    "status": "accepted",
+    "driver": {
+      "id": "3",
+      "name": "Сергей Иванов",
+      "car": "Skoda Octavia 2019",
+      "car_number": "В789ЕЖ 777",
+      "phone": "+7 (934) 567-89-01",
+      "rating": 4.7
+    },
+    "price": 150,
+    "estimated_arrival": 9,
+    "from_address": "маяковского 1",
+    "to_address": "декабристов 123",
+    "client_phone": "+7 (903) 345-41-05",
+    "car_type": "economy",
+    "payment_method": "cash"
+  },
+  {
+    "id": "ORD-20260216144030-DTQN",
+    "created_at": "2026-02-16T14:40:30.393068",
+    "status": "accepted",
+    "driver": {
+      "id": "4",
+      "name": "Мария Кузнецова",
+      "car": "Toyota Camry 2022",
+      "car_number": "Г012ЗИ 777",
+      "phone": "+7 (945) 678-90-12",
+      "rating": 5.0
+    },
+    "price": 150,
+    "estimated_arrival": 10,
+    "from_address": "маяковского 1",
+    "to_address": "декабристов 123",
+    "client_phone": "+7 (903) 345-41-05",
+    "car_type": "economy",
+    "payment_method": "cash"
+  }
+]

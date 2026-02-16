@@ -1,0 +1,54 @@
+[
+  {
+    "id": "1",
+    "name": "Иван Петров",
+    "car": "Kia Rio 2020",
+    "car_number": "А123БВ 777",
+    "phone": "+7 (912) 345-67-89",
+    "rating": 4.8,
+    "status": "free",
+    "coordinates": {
+      "lat": 55.7558,
+      "lng": 37.6176
+    }
+  },
+  {
+    "id": "2",
+    "name": "Анна Сидорова",
+    "car": "Hyundai Solaris 2021",
+    "car_number": "Б456ГД 777",
+    "phone": "+7 (923) 456-78-90",
+    "rating": 4.9,
+    "status": "free",
+    "coordinates": {
+      "lat": 55.7614,
+      "lng": 37.6098
+    }
+  },
+  {
+    "id": "3",
+    "name": "Сергей Иванов",
+    "car": "Skoda Octavia 2019",
+    "car_number": "В789ЕЖ 777",
+    "phone": "+7 (934) 567-89-01",
+    "rating": 4.7,
+    "status": "busy",
+    "coordinates": {
+      "lat": 55.75,
+      "lng": 37.62
+    }
+  },
+  {
+    "id": "4",
+    "name": "Мария Кузнецова",
+    "car": "Toyota Camry 2022",
+    "car_number": "Г012ЗИ 777",
+    "phone": "+7 (945) 678-90-12",
+    "rating": 5.0,
+    "status": "busy",
+    "coordinates": {
+      "lat": 55.77,
+      "lng": 37.63
+    }
+  }
+]
