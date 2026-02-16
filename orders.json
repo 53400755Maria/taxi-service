@@ -113,5 +113,30 @@
       }
     },
     "estimated_arrival": 6
+  },
+  {
+    "id": "ORD-20260216173442-AC86",
+    "created_at": "2026-02-16T17:34:42.660272",
+    "status": "accepted",
+    "from_address": "ул. Тестовая, 1",
+    "to_address": "ул. Проверочная, 2",
+    "client_phone": "+7 (999) 999-99-99",
+    "car_type": "economy",
+    "payment_method": "cash",
+    "price": 150,
+    "driver": {
+      "id": "2",
+      "name": "Анна Сидорова",
+      "car": "Hyundai Solaris 2021",
+      "car_number": "Б456ГД 777",
+      "phone": "+7 (923) 456-78-90",
+      "rating": 4.9,
+      "status": "free",
+      "coordinates": {
+        "lat": 55.7614,
+        "lng": 37.6098
+      }
+    },
+    "estimated_arrival": 13
   }
 ]
