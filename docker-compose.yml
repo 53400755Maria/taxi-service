@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: taxi-service
+    ports:
+      - "5000:5000"
+    environment:
+      FLASK_APP: app.server
+      FLASK_ENV: production
+      PYTHONUNBUFFERED: 1
+    # Если хочешь, чтобы папка с данными сохранялась локально - раскомментируй:
+    # volumes:
+    #   - ./data:/app/data
