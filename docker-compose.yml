@@ -10,6 +10,3 @@ services:
       FLASK_APP: app.server
       FLASK_ENV: production
       PYTHONUNBUFFERED: 1
-    # Если хочешь, чтобы папка с данными сохранялась локально - раскомментируй:
-    # volumes:
-    #   - ./data:/app/data
