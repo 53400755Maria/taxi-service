@@ -10,5 +10,4 @@ services:
       FLASK_APP: app.server
       FLASK_ENV: production
       PYTHONUNBUFFERED: 1
-    volumes:
-      - ./data:/app/data
+

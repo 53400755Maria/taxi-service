@@ -24,7 +24,7 @@ jobs:
       - name: Run linters
         run: |
           flake8 app/ tests/ --max-line-length=100 --exclude=__pycache__,venv
-          black --check app/ tests/ || echo "Black check passed"
+          black --check app/ tests/
 
   test:
     name: Run Tests
