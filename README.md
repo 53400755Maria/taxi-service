@@ -15,3 +15,9 @@
 cd app
 pip install -r requirements.txt
 flask run
+
+## Локальный запуск (с Docker)
+docker compose up --build
+
+## Публичный URL развёрнутого приложения:
+https://taxi-service-k8xw.onrender.com
